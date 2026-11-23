@@ -1,0 +1,265 @@
+export type SubjectType = 'Algebra' | 'Calculus' | 'Geometry & Trigonometry' | 'Statistics & Probability' | 'Mathematics';
+
+export type ClassLevel = 'Class 10' | 'Class 11' | 'Class 12' | 'JEE Main' | 'All Classes';
+
+export type NoticeCategory = 
+  | 'Important Notice' 
+  | 'Class Update' 
+  | 'Test / Examination' 
+  | 'Assignment' 
+  | 'Study Material' 
+  | 'Question Paper' 
+  | 'General Announcement';
+
+export type ResourceType = 
+  | 'Chapter Notes' 
+  | 'Solved Examples' 
+  | 'Formula Sheet' 
+  | 'Important Questions' 
+  | 'Practice Worksheet' 
+  | 'Lab Activity Manual' 
+  | 'Revision Material'
+  | 'Book'
+  | 'Other';
+
+export type TestType = 
+  | 'Unit Test' 
+  | 'Periodic Test' 
+  | 'Term Examination' 
+  | 'Board Mock Test' 
+  | 'JEE Main DPP' 
+  | 'CBSE Sample Paper';
+
+export interface NoticeUpdate {
+  id: string;
+  title: string;
+  titleHi?: string;
+  category: NoticeCategory;
+  description: string;
+  descriptionHi?: string;
+  content: string;
+  contentHi?: string;
+  date: string;
+  isPinned: boolean;
+  isPublished: boolean;
+  attachmentName?: string;
+  attachmentUrl?: string;
+  attachmentSize?: string;
+  targetClass?: ClassLevel;
+}
+
+export interface QuestionPaper {
+  id: string;
+  title: string;
+  titleHi?: string;
+  subject: SubjectType;
+  className: ClassLevel;
+  chapter: string;
+  testType: TestType;
+  year: string;
+  uploadDate: string;
+  totalMarks: number;
+  duration: string;
+  description: string;
+  descriptionHi?: string;
+  fileUrl: string;
+  fileName: string;
+  fileSize: string;
+  hasSolution: boolean;
+  solutionId?: string;
+}
+
+export interface AnswerKeyItem {
+  questionNo: string | number;
+  answer: string;
+  explanation: string;
+}
+
+export interface SolutionItem {
+  id: string;
+  title: string;
+  titleHi?: string;
+  questionPaperId: string;
+  questionPaperTitle: string;
+  subject: SubjectType;
+  chapter: string;
+  className: ClassLevel;
+  uploadDate: string;
+  description: string;
+  descriptionHi?: string;
+  solutionPdfUrl?: string;
+  solutionPdfName?: string;
+  solutionPdfSize?: string;
+  stepByStepContent: string;
+  answerKey?: AnswerKeyItem[];
+  verifiedBy: string;
+}
+
+export interface StudyMaterial {
+  id: string;
+  title: string;
+  titleHi?: string;
+  subject: SubjectType;
+  className: ClassLevel;
+  chapter: string;
+  resourceType: ResourceType;
+  description: string;
+  descriptionHi?: string;
+  fileUrl: string;
+  fileName: string;
+  fileSize: string;
+  uploadDate: string;
+  downloadsCount: number;
+  isFeatured: boolean;
+}
+
+export interface CoachingCenter {
+  id: string;
+  name: string;
+  location: string;
+  locationHi?: string;
+  address: string;
+  batches: string;
+  batchesHi?: string;
+  schedule: string;
+  scheduleHi?: string;
+  contactNumber: string;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  roleHi?: string;
+  designationHi?: string;
+  centersHi?: string;
+  designation: string;
+  specialization: string;
+  experience: string;
+  centers: string;
+  image: string;
+  bio: string;
+  bioHi?: string;
+  email?: string;
+  phone?: string;
+}
+
+export interface ContactMessage {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  studentClass: string;
+  subject: string;
+  message: string;
+  date: string;
+  isRead: boolean;
+  isArchived: boolean;
+  replyStatus?: 'Pending' | 'Replied';
+}
+
+export interface SiteSettings {
+  teacherName: string;
+  tagline: string;
+  bioShort: string;
+  experienceYears: number;
+  centersCount: number;
+  studentsCount: string;
+  email: string;
+  phone: string;
+  whatsapp: string;
+  /** Where contact-form enquiries are emailed. Falls back to `email`. */
+  enquiryEmail?: string;
+  bannerActive: boolean;
+  bannerAlert: string;
+  bannerAlertHi?: string;
+  bannerLink?: string;
+  coachingCenters: CoachingCenter[];
+}
+
+export interface TaxonomyData {
+  subjects: string[];
+  classes: string[];
+  chapters: {
+    'Algebra': string[];
+    'Calculus': string[];
+    'Geometry & Trigonometry': string[];
+    'Statistics & Probability': string[];
+  };
+  resourceTypes: string[];
+  testTypes: string[];
+  noticeCategories: string[];
+}
+
+export interface Testimonial {
+  id: string;
+  /** Student or parent name, as they agreed to be shown (e.g. "Riya S."). */
+  name: string;
+  /** Short context, e.g. "Class 12, 2025 · 95% in Boards". */
+  detail: string;
+  quote: string;
+  isPublished: boolean;
+}
+
+export interface ConceptNote {
+  id: string;
+  slug: string;
+  /** '10', '11' or '12' */
+  grade: string;
+  chapter: number;
+  title: string;
+  titleHi?: string;
+  summary: string;
+  summaryHi?: string;
+  /** Simple Markdown: ## headings, - lists, | tables |, > tips, **bold** */
+  body: string;
+  bodyHi?: string;
+  isPublished: boolean;
+  updatedDate: string;
+}
+
+export interface Article {
+  id: string;
+  slug: string;
+  title: string;
+  titleHi?: string;
+  summary: string;
+  summaryHi?: string;
+  image: string;
+  imageAlt: string;
+  imageAltHi?: string;
+  tags: string[];
+  body: string;
+  bodyHi?: string;
+  date: string;
+  isPublished: boolean;
+}
+
+export interface Practical {
+  id: string;
+  title: string;
+  titleHi?: string;
+  description: string;
+  descriptionHi?: string;
+  /** Any YouTube link: watch?v=, youtu.be/, shorts/ or embed/ */
+  youtubeUrl: string;
+  className: ClassLevel;
+  topic?: string;
+  date: string;
+  isPublished: boolean;
+}
+
+export interface DatabaseSchema {
+  updates: NoticeUpdate[];
+  questionPapers: QuestionPaper[];
+  solutions: SolutionItem[];
+  studyMaterials: StudyMaterial[];
+  teamMembers: TeamMember[];
+  contactMessages: ContactMessage[];
+  testimonials?: Testimonial[];
+  conceptNotes?: ConceptNote[];
+  articles?: Article[];
+  practicals?: Practical[];
+  settings: SiteSettings;
+  taxonomies: TaxonomyData;
+}
