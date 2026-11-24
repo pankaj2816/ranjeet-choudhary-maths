@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="Inter, Arial, sans-serif">
   <rect width="1200" height="675" fill="#F8FAFC"/>
-  <rect x="472.6" y="356.4" width="36.4" height="36.4" fill="#DBEAFE" stroke="#0F172A" stroke-width="2"/>
+  <rect x="472.6" y="356.4" width="36.4" height="36.4" fill="#CCFBF1" stroke="#0F172A" stroke-width="2"/>
   <text x="490.8" y="384.6" text-anchor="middle" font-size="17" fill="#0F172A" font-weight="600">1</text>
-  <rect x="509.0" y="356.4" width="36.4" height="36.4" fill="#BFDBFE" stroke="#0F172A" stroke-width="2"/>
+  <rect x="509.0" y="356.4" width="36.4" height="36.4" fill="#99F6E4" stroke="#0F172A" stroke-width="2"/>
   <text x="527.2" y="384.6" text-anchor="middle" font-size="17" fill="#0F172A" font-weight="600">1</text>
-  <rect x="472.6" y="392.8" width="72.8" height="72.8" fill="#93C5FD" stroke="#0F172A" stroke-width="2"/>
+  <rect x="472.6" y="392.8" width="72.8" height="72.8" fill="#5EEAD4" stroke="#0F172A" stroke-width="2"/>
   <text x="509.0" y="439.2" text-anchor="middle" font-size="22" fill="#0F172A" font-weight="600">2</text>
-  <rect x="363.4" y="356.4" width="109.2" height="109.2" fill="#DBEAFE" stroke="#0F172A" stroke-width="2"/>
+  <rect x="363.4" y="356.4" width="109.2" height="109.2" fill="#CCFBF1" stroke="#0F172A" stroke-width="2"/>
   <text x="418.0" y="421.0" text-anchor="middle" font-size="27" fill="#0F172A" font-weight="600">3</text>
-  <rect x="363.4" y="174.4" width="182.0" height="182.0" fill="#BFDBFE" stroke="#0F172A" stroke-width="2"/>
+  <rect x="363.4" y="174.4" width="182.0" height="182.0" fill="#99F6E4" stroke="#0F172A" stroke-width="2"/>
   <text x="454.4" y="275.4" text-anchor="middle" font-size="34" fill="#0F172A" font-weight="600">5</text>
-  <rect x="545.4" y="174.4" width="291.2" height="291.2" fill="#93C5FD" stroke="#0F172A" stroke-width="2"/>
+  <rect x="545.4" y="174.4" width="291.2" height="291.2" fill="#5EEAD4" stroke="#0F172A" stroke-width="2"/>
   <text x="691.0" y="330.0" text-anchor="middle" font-size="34" fill="#0F172A" font-weight="600">8</text>
   <path d="M472.6 392.8 A36.4 36.4 0 0 1 509.0 356.4 A36.4 36.4 0 0 1 545.4 392.8 A72.8 72.8 0 0 1 472.6 465.6 A109.2 109.2 0 0 1 363.4 356.4 A182.0 182.0 0 0 1 545.4 174.4 A291.2 291.2 0 0 1 836.6 465.6" fill="none" stroke="#DC2626" stroke-width="4"/>
   <text x="600" y="590" text-anchor="middle" font-size="30" font-weight="700" fill="#0F172A">1, 1, 2, 3, 5, 8, 13, … each term is the sum of the two before it</text>

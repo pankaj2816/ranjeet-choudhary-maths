@@ -22,8 +22,8 @@ export default function NotFound() {
             {L('Error 404', 'त्रुटि 404')}
           </p>
           <h1 className="mt-6 text-[2.8rem] sm:text-7xl leading-[1.02] text-ink" style={{ fontVariationSettings: '"opsz" 144' }}>
-            {L('This page has ', 'यह पेज ')}
-            <em className="text-accent">{L('dissolved.', 'घुल गया।')}</em>
+            {L('This page is ', 'यह पेज ')}
+            <em className="text-accent">{L('undefined.', 'अपरिभाषित है।')}</em>
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
             {L(
@@ -49,7 +49,7 @@ export default function NotFound() {
           <div className="grid grid-cols-2 gap-3 opacity-90">
             <ElementTile symbol="N" number={7} name="Nitrogen" size="lg" tone="light" />
             <ElementTile symbol="O" number={8} name="Oxygen" size="lg" tone="accent" />
-            <ElementTile symbol="Ac" number={89} name="Actinium" size="lg" tone="dark" />
+            <ElementTile symbol="Rc" number="π" name="Maths" size="lg" tone="dark" />
             <ElementTile symbol="?" number="—" name="Unknown" size="lg" tone="light" />
           </div>
         </div>

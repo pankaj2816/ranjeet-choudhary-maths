@@ -16,10 +16,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT_DIR = os.environ.get('FONT_DIR', '/tmp/fonts')
-BLUE = (37, 99, 235)
+BLUE = (15, 118, 110)
 INK = (15, 23, 42)
 MUTED = (71, 85, 105)
-PAPER_DEEP = (245, 248, 252)
+PAPER_DEEP = (244, 248, 247)
 LINE = (203, 213, 225)
 PHOTO = os.path.join(ROOT, 'public', 'images', 'ranjeet-photo.jpg')
 
@@ -91,7 +91,7 @@ def share(path):
         f_math = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 10)
         for t, x, y, s in sym:
             f_math = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', s)
-            d.text((x, y), t, font=f_math, fill=(191, 219, 254), anchor='mm')
+            d.text((x, y), t, font=f_math, fill=(153, 230, 215), anchor='mm')
     img.save(path)
 
 

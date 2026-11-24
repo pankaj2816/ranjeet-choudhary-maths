@@ -22,6 +22,7 @@ const devanagari = Noto_Sans_Devanagari({
 const isPages = process.env.GITHUB_ACTIONS === 'true';
 
 export const metadata: Metadata = {
+  referrer: 'strict-origin-when-cross-origin',
   metadataBase: new URL(isPages ? 'https://pankaj2816.github.io' : 'http://localhost:3000'),
   title: "Ranjeet Choudhary Sir | Maths Teacher | Class 10, 11 & 12",
   description: "Official website of Ranjeet Choudhary Sir, Mathematics teacher (B.Sc., B.Ed., M.Sc. Maths) with 8+ years of experience teaching Class 10, 11 and 12. Free study material, question papers, worked solutions and notice board updates.",

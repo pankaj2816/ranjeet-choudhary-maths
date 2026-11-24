@@ -37,7 +37,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-paper flex items-center justify-center px-5 py-16">
       <div className="w-full max-w-md">
         <div className="flex items-center gap-3">
-          <ElementTile symbol="Ac" number={89} size="sm" tone="dark" />
+          <ElementTile symbol="Rc" number="π" size="sm" tone="dark" />
           <span className="font-display text-xl text-ink">Ranjeet Choudhary</span>
         </div>
 

@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+/* The site has one light theme. dark: classes only apply inside a .dark parent,
+   never because the visitor's phone or computer is in dark mode. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* =====================================================================
-   Design system — "Clean white + blue"
-   White pages, navy text and one friendly blue for buttons and links,
+   Design system — "Clean white + teal"
+   White pages, navy text and one calm teal for buttons and links,
    with clean sans-serif headings.
    The Tailwind colour scales used across the older inner pages
    (slate / cyan / teal / sky / indigo / blue / purple) are remapped here
@@ -14,17 +18,17 @@
   --font-sans: var(--font-body), var(--font-deva), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-body), var(--font-deva), ui-sans-serif, system-ui, sans-serif;
 
-  /* Core tokens — clean white, navy text, one friendly blue */
+  /* Core tokens — clean white, navy text, one calm teal */
   --color-ink: #0f172a;
   --color-ink-soft: #1e293b;
   --color-paper: #ffffff;
-  --color-paper-deep: #f5f8fc;
+  --color-paper-deep: #f4f8f7;
   --color-line: #e2e8f0;
   --color-muted: #475569;
-  --color-accent: #2563eb;
-  --color-accent-deep: #1d4ed8;
-  --color-accent-soft: #eff6ff;
-  --color-brass: #60a5fa;
+  --color-accent: #0f766e;
+  --color-accent-deep: #115e59;
+  --color-accent-soft: #f0fdfa;
+  --color-brass: #2dd4bf;
 
   /* Neutral scale (cool slate) */
   --color-slate-50: #f8fafc;
@@ -39,31 +43,36 @@
   --color-slate-900: #0f172a;
   --color-slate-950: #0b1220;
 
-  /* One accent family: cyan / teal / sky / indigo / purple all follow blue */
-  --color-cyan-50: #eff6ff;  --color-cyan-100: #dbeafe; --color-cyan-200: #bfdbfe;
-  --color-cyan-300: #93c5fd; --color-cyan-400: #60a5fa; --color-cyan-500: #3b82f6;
-  --color-cyan-600: #2563eb; --color-cyan-700: #1d4ed8; --color-cyan-800: #1e40af;
-  --color-cyan-900: #1e3a8a; --color-cyan-950: #172554;
+  /* One accent family: cyan / teal / sky / indigo / purple all follow teal */
+  --color-cyan-50: #f0fdfa;  --color-cyan-100: #ccfbf1; --color-cyan-200: #99f6e4;
+  --color-cyan-300: #5eead4; --color-cyan-400: #2dd4bf; --color-cyan-500: #14b8a6;
+  --color-cyan-600: #0d9488; --color-cyan-700: #0f766e; --color-cyan-800: #115e59;
+  --color-cyan-900: #134e4a; --color-cyan-950: #042f2e;
 
-  --color-teal-50: #eff6ff;  --color-teal-100: #dbeafe; --color-teal-200: #bfdbfe;
-  --color-teal-300: #93c5fd; --color-teal-400: #60a5fa; --color-teal-500: #3b82f6;
-  --color-teal-600: #2563eb; --color-teal-700: #1d4ed8; --color-teal-800: #1e40af;
-  --color-teal-900: #1e3a8a; --color-teal-950: #172554;
+  --color-teal-50: #f0fdfa;  --color-teal-100: #ccfbf1; --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4; --color-teal-400: #2dd4bf; --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488; --color-teal-700: #0f766e; --color-teal-800: #115e59;
+  --color-teal-900: #134e4a; --color-teal-950: #042f2e;
 
-  --color-sky-50: #eff6ff;  --color-sky-100: #dbeafe; --color-sky-200: #bfdbfe;
-  --color-sky-300: #93c5fd; --color-sky-400: #60a5fa; --color-sky-500: #3b82f6;
-  --color-sky-600: #2563eb; --color-sky-700: #1d4ed8; --color-sky-800: #1e40af;
-  --color-sky-900: #1e3a8a; --color-sky-950: #172554;
+  --color-sky-50: #f0fdfa;  --color-sky-100: #ccfbf1; --color-sky-200: #99f6e4;
+  --color-sky-300: #5eead4; --color-sky-400: #2dd4bf; --color-sky-500: #14b8a6;
+  --color-sky-600: #0d9488; --color-sky-700: #0f766e; --color-sky-800: #115e59;
+  --color-sky-900: #134e4a; --color-sky-950: #042f2e;
 
-  --color-indigo-50: #eff6ff;  --color-indigo-100: #dbeafe; --color-indigo-200: #bfdbfe;
-  --color-indigo-300: #93c5fd; --color-indigo-400: #60a5fa; --color-indigo-500: #3b82f6;
-  --color-indigo-600: #2563eb; --color-indigo-700: #1d4ed8; --color-indigo-800: #1e40af;
-  --color-indigo-900: #1e3a8a; --color-indigo-950: #172554;
+  --color-indigo-50: #f0fdfa;  --color-indigo-100: #ccfbf1; --color-indigo-200: #99f6e4;
+  --color-indigo-300: #5eead4; --color-indigo-400: #2dd4bf; --color-indigo-500: #14b8a6;
+  --color-indigo-600: #0d9488; --color-indigo-700: #0f766e; --color-indigo-800: #115e59;
+  --color-indigo-900: #134e4a; --color-indigo-950: #042f2e;
 
-  --color-purple-50: #eff6ff;  --color-purple-100: #dbeafe; --color-purple-200: #bfdbfe;
-  --color-purple-300: #93c5fd; --color-purple-400: #60a5fa; --color-purple-500: #3b82f6;
-  --color-purple-600: #2563eb; --color-purple-700: #1d4ed8; --color-purple-800: #1e40af;
-  --color-purple-900: #1e3a8a; --color-purple-950: #172554;
+  --color-purple-50: #f0fdfa;  --color-purple-100: #ccfbf1; --color-purple-200: #99f6e4;
+  --color-purple-300: #5eead4; --color-purple-400: #2dd4bf; --color-purple-500: #14b8a6;
+  --color-purple-600: #0d9488; --color-purple-700: #0f766e; --color-purple-800: #115e59;
+  --color-purple-900: #134e4a; --color-purple-950: #042f2e;
+
+  --color-blue-50: #f0fdfa;  --color-blue-100: #ccfbf1; --color-blue-200: #99f6e4;
+  --color-blue-300: #5eead4; --color-blue-400: #2dd4bf; --color-blue-500: #14b8a6;
+  --color-blue-600: #0d9488; --color-blue-700: #0f766e; --color-blue-800: #115e59;
+  --color-blue-900: #134e4a; --color-blue-950: #042f2e;
 
   /* Calm geometry: soft radii and light shadows; small text bumped for readability */
   --radius-lg: 0.5rem;
@@ -235,4 +244,8 @@ input.border, select.border, textarea.border {
 html[lang='hi'] .eyebrow,
 html[lang='hi'] [class*='tracking-'] {
   letter-spacing: 0 !important;
+}
+
+:root {
+  color-scheme: light;
 }

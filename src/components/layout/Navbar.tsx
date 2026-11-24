@@ -111,7 +111,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0" aria-label={L('Ranjeet Choudhary Sir — Home', 'रणजीत चौधरी सर — होम')}>
             <ElementTile symbol="Rc" number="π" size="sm" tone="dark" />
             <span className="flex flex-col leading-tight">
-              <span className="font-display text-[1.15rem] text-ink" style={{ fontVariationSettings: '"opsz" 36' }}>
+              <span className="font-display text-[1.02rem] min-[400px]:text-[1.15rem] text-ink" style={{ fontVariationSettings: '"opsz" 36' }}>
                 Ranjeet Choudhary
               </span>
               <span className={`eyebrow !text-[0.62rem] text-muted ${isHi ? '' : '!tracking-[0.22em]'}`}>{L('Mathematics', 'गणित')}</span>

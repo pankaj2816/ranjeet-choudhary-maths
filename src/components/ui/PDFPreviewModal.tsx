@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { X, ArrowDown, ExternalLink, ArrowRight, FileText } from 'lucide-react';
 import { useToast } from '@/context/ToastContext';
 import { useLanguage } from '@/context/LanguageContext';
-import { term, duration as dur } from '@/lib/terms';
+import { term, duration as dur, formatDate } from '@/lib/terms';
 import ContentRenderer from './ContentRenderer';
 import { getAssetUrl, triggerDownload } from '@/lib/downloadUtils';
 
@@ -105,7 +105,7 @@ export default function PDFPreviewModal({
     totalMarks ? `${totalMarks} ${L('marks', 'अंक')}` : '',
     dur(duration, isHi),
     fileSize || '',
-    uploadDate ? `${L('Added', 'जोड़ा गया')} ${uploadDate}` : '',
+    uploadDate ? `${L('Added', 'जोड़ा गया')} ${formatDate(uploadDate, isHi)}` : '',
   ].filter(Boolean);
 
   const renderFile = () => {

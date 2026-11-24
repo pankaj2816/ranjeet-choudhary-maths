@@ -28,6 +28,7 @@ export default function AdminVideosPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState<Partial<Practical> | null>(null);
+  const [filter, setFilter] = useState<string>('All');
 
   const load = () =>
     getPracticals()
@@ -37,6 +38,13 @@ export default function AdminVideosPage() {
 
   useEffect(() => {
     load();
+    // Opened from a class shortcut: /admin/videos?class=Class%2011
+    const cls = new URLSearchParams(window.location.search).get('class') as ClassLevel | null;
+    if (cls && CLASSES.includes(cls)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setFilter(cls);
+      setForm({ ...EMPTY, className: cls });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -86,7 +94,9 @@ export default function AdminVideosPage() {
     }
   };
 
-  const sorted = [...items].sort((a, b) => b.date.localeCompare(a.date));
+  const sorted = [...items]
+    .filter((p) => filter === 'All' || p.className === filter || p.className === 'All Classes')
+    .sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <div className="max-w-5xl space-y-8">
@@ -94,19 +104,31 @@ export default function AdminVideosPage() {
         <div>
           <h1 className="text-3xl text-white flex items-center gap-3">
             <PlayCircle className="w-7 h-7 text-indigo-400" />
-            Video lessons
+            Video lessons (YouTube)
           </h1>
           <p className="mt-2 text-sm text-slate-400 max-w-2xl">
-            Paste a YouTube link and write a short description. Students watch it on the Video Lessons page and on their class page.
+            Copy a video link from YouTube, paste it here, choose the class, and add a title and short description. Students watch it on the Video Lessons page and under “Video lessons” on their class page.
           </p>
         </div>
         <button
-          onClick={() => setForm({ ...EMPTY })}
+          onClick={() => setForm({ ...EMPTY, className: filter !== 'All' ? (filter as ClassLevel) : EMPTY.className })}
           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-accent hover:bg-accent-deep text-white text-sm font-medium shrink-0"
         >
           <Plus className="w-4 h-4" />
           Add video
         </button>
+      </div>
+
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Show videos for">
+        {['All', ...CLASSES.filter((c) => c !== 'All Classes')].map((c) => (
+          <button
+            key={c}
+            onClick={() => setFilter(c)}
+            className={`px-3.5 py-1.5 rounded-lg text-sm border ${filter === c ? 'bg-white text-ink border-white' : 'border-slate-700 text-slate-300 hover:text-white'}`}
+          >
+            {c === 'All' ? 'All classes' : c}
+          </button>
+        ))}
       </div>
 
       {loading ? (
@@ -159,7 +181,7 @@ export default function AdminVideosPage() {
         <div className="fixed inset-0 z-50 bg-black/70 flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto">
           <form onSubmit={submit} className="w-full max-w-3xl bg-slate-950 border border-slate-800 rounded-2xl p-5 sm:p-7 space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl text-white">{form.id ? 'Edit video' : 'Add video lesson'}</h2>
+              <h2 className="text-xl text-white">{form.id ? 'Edit video' : 'Add a YouTube video'}</h2>
               <button type="button" onClick={() => setForm(null)} className="text-slate-400 hover:text-white" aria-label="Close">
                 <X className="w-5 h-5" />
               </button>

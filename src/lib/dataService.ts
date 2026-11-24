@@ -439,7 +439,7 @@ export async function getPracticals(): Promise<Practical[]> {
 export async function savePractical(item: Partial<Practical>): Promise<Practical> {
   const defaults: Practical = {
     id: item.id || `prac-${Date.now()}`,
-    title: item.title || 'Practical video',
+    title: item.title || 'Video lesson',
     description: item.description || '',
     youtubeUrl: item.youtubeUrl || '',
     className: item.className || 'All Classes',
@@ -478,6 +478,7 @@ export async function saveMessage(item: Partial<ContactMessage>): Promise<Contac
     body: JSON.stringify({
       _subject: `New enquiry: ${item.subject || 'Maths batch'} — ${item.name || 'Student'}`,
       _template: 'table',
+      _honey: '',
       _replyto: item.email || '',
       Name: item.name || '',
       Email: item.email || '',

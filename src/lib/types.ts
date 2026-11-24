@@ -117,6 +117,7 @@ export interface CoachingCenter {
   id: string;
   name: string;
   location: string;
+  nameHi?: string;
   locationHi?: string;
   address: string;
   batches: string;
