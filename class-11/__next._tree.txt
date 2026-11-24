@@ -3,4 +3,4 @@
 :HL["/ranjeet-choudhary-maths/_next/static/media/a582cd8757547b1f-s.p.2oqonvbxcl6a7.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"class-11","h":96,"c":"$Q2"}]]
-0:{"b":"MZ8xSzSoAEKyXhfD3Xu3z","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"XqhGAgraKUqOx78KjceCH","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
