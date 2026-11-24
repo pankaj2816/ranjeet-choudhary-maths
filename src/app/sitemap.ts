@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...(initialDatabase.articles || []).filter((a) => a.isPublished).map((a) => `/articles/${a.slug}`),
   ];
   return routes.map((r) => ({
-    url: `${SITE}${r}`,
+    url: `${SITE}${r}/`,
     changeFrequency: 'weekly',
     priority: r === '' ? 1 : r.startsWith('/class-') ? 0.9 : 0.7,
   }));

@@ -5,6 +5,8 @@ const repo = 'ranjeet-choudhary-maths';
 
 const nextConfig: NextConfig = {
   output: isGithubActions ? 'export' : undefined,
+  // Pages are written as folder/index.html, so both /about and /about/ work on GitHub Pages.
+  trailingSlash: true,
   basePath: isGithubActions ? `/${repo}` : '',
   images: {
     unoptimized: true,
