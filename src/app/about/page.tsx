@@ -80,7 +80,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="absolute -right-3 -bottom-3 sm:-right-5 sm:-bottom-5 w-full h-full bg-paper-deep" aria-hidden="true" />
                 <div className="relative aspect-[4/5] overflow-hidden bg-paper-deep">
-                  <SafeImage src="/images/ranjeet-photo.jpg" alt={L(`${pick(settings.teacherName, settings.teacherNameHi)} Sir`, `${pick(settings.teacherName, settings.teacherNameHi)} सर`)} fill priority sizes="(min-width:1024px) 40vw, 90vw" className="object-cover object-[50%_18%]" />
+                  <SafeImage src="/images/ranjeet-photo-3.jpg" alt={L(`${pick(settings.teacherName, settings.teacherNameHi)} Sir`, `${pick(settings.teacherName, settings.teacherNameHi)} सर`)} fill priority sizes="(min-width:1024px) 40vw, 90vw" className="object-cover object-[50%_18%]" />
                 </div>
               </div>
             </figure>

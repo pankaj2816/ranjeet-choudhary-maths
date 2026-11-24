@@ -80,10 +80,14 @@ Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the static s
 
 Clean white + blue: white pages (`paper`), navy text (`ink`) and one friendly blue (`accent`), with Instrument Sans for all text and Noto Sans Devanagari for Hindi. Tokens are in `src/app/globals.css`; older Tailwind colour classes on inner pages are remapped there to the same palette.
 
-## Teacher photo
+## Teacher photos
 
-The site currently shows a "Photo coming soon" placeholder. To add Ranjeet Sir's photo:
+Ranjeet Sir's photos are in `public/images/`:
 
-1. Save a portrait photo (about 1200 × 1500 px, upright) as `public/images/ranjeet-photo.jpg`, replacing the placeholder. It is used on the home page, the About page and the profile card.
-2. Optional: rebuild the link-preview image with his photo on the right:
-   `pip install pillow fonttools brotli` and run `python scripts/make_brand_images.py --share-only` (see the note at the top of that script for the fonts).
+- `ranjeet-photo.jpg`: home page portrait (also used for the link-preview image)
+- `ranjeet-photo-2.jpg`: home "About" section and the profile card on the About page
+- `ranjeet-photo-3.jpg`: About page portrait
+
+They were cut out from his original photos and placed on a plain studio background (1200 × 1500 px). To swap one, save a new upright photo with the same file name. To rebuild the link-preview image after changing `ranjeet-photo.jpg`, run `python scripts/make_brand_images.py --share-only` (see the note at the top of that script for the fonts).
+
+The original photos are kept outside git (`photos/` is ignored).

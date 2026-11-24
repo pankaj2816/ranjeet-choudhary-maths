@@ -43,3 +43,6 @@ next-env.d.ts
 # python
 __pycache__/
 *.pyc
+
+# original teacher photos (not published)
+/photos/

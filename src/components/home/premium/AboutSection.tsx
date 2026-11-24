@@ -18,11 +18,11 @@ export default function AboutSection() {
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative aspect-[9/10] overflow-hidden bg-paper">
               <SafeImage
-                src="/images/ranjeet-photo.jpg"
-                alt={L('Ranjeet Choudhary Sir teaching a class', 'कक्षा में पढ़ाते रणजीत चौधरी सर')}
+                src="/images/ranjeet-photo-2.jpg"
+                alt={L('Ranjeet Choudhary Sir', 'रणजीत चौधरी सर')}
                 fill
                 sizes="(min-width: 1024px) 38vw, 90vw"
-                className="object-cover object-[65%_30%]"
+                className="object-cover object-[50%_22%]"
               />
             </div>
             <p className="mt-4 text-[0.8rem] text-muted">{L('Ranjeet Choudhary Sir', 'रणजीत चौधरी सर')} — {t.hero.teacherCardRole}</p>
