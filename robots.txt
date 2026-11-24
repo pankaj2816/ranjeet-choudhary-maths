@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /ranjeet-choudhary-maths/admin
+
+Sitemap: https://pankaj2816.github.io/ranjeet-choudhary-maths/sitemap.xml
