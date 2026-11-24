@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import ElementTile from '@/components/ui/ElementTile';
+import BrandMark from '@/components/ui/BrandMark';
 
 export default function NotFound() {
   const { L } = useLanguage();
@@ -47,10 +48,10 @@ export default function NotFound() {
         </div>
         <div className="hidden lg:flex lg:col-span-5 justify-center">
           <div className="grid grid-cols-2 gap-3 opacity-90">
-            <ElementTile symbol="N" number={7} name="Nitrogen" size="lg" tone="light" />
-            <ElementTile symbol="O" number={8} name="Oxygen" size="lg" tone="accent" />
-            <ElementTile symbol="Rc" number="π" name="Maths" size="lg" tone="dark" />
-            <ElementTile symbol="?" number="—" name="Unknown" size="lg" tone="light" />
+            <ElementTile symbol="÷0" number="?" name="Undefined" size="lg" tone="light" />
+            <ElementTile symbol="√−1" number="i" name="Imaginary" size="lg" tone="accent" />
+            <BrandMark size="lg" />
+            <ElementTile symbol="x" number="?" name="Unknown" size="lg" tone="light" />
           </div>
         </div>
       </div>

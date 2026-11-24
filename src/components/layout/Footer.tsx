@@ -7,7 +7,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { initialDatabase } from '@/data/initialData';
 import { getSettings } from '@/lib/dataService';
 import { SiteSettings } from '@/lib/types';
-import ElementTile from '@/components/ui/ElementTile';
+import BrandMark from '@/components/ui/BrandMark';
 import { CLASS_LIST } from '@/lib/classes';
 
 export default function Footer() {
@@ -58,7 +58,7 @@ export default function Footer() {
         {/* Statement */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 pb-14 border-b border-paper/10">
           <div className="flex items-start gap-5">
-            <ElementTile symbol="Rc" number="π" name="Maths" size="lg" tone="dark" />
+            <BrandMark size="lg" />
             <div>
               <p className="font-display text-4xl sm:text-5xl text-paper leading-[1.05]" style={{ fontVariationSettings: '"opsz" 120' }}>
                 {t.home.footerLine}
@@ -123,9 +123,14 @@ export default function Footer() {
               PixelToCloud
             </a>
           </p>
-          <Link href="/admin/login" className="hover:text-paper/80 transition-colors">
-            {L('Teacher login', 'शिक्षक लॉगिन')}
-          </Link>
+          <div className="flex items-center gap-5">
+            <Link href="/site-map" className="hover:text-paper/80 transition-colors">
+              {L('Site map', 'साइट मैप')}
+            </Link>
+            <Link href="/admin/login" className="hover:text-paper/80 transition-colors">
+              {L('Teacher login', 'शिक्षक लॉगिन')}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

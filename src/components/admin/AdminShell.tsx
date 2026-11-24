@@ -25,7 +25,7 @@ import {
 import { useToast } from '@/context/ToastContext';
 import { hasAdminSession, signOut } from '@/lib/github';
 import { refreshAdminData } from '@/lib/dataService';
-import ElementTile from '@/components/ui/ElementTile';
+import BrandMark from '@/components/ui/BrandMark';
 
 const ADMIN_NAV_ITEMS = [
   { label: 'Overview', href: '/admin', icon: LayoutDashboard },
@@ -68,7 +68,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
   if (!signedIn) {
     return (
       <div className="min-h-screen bg-ink flex flex-col items-center justify-center text-paper/60 gap-4">
-        <ElementTile symbol="Rc" number="π" size="md" tone="dark" />
+        <BrandMark size="md" />
         <span className="text-sm">Checking sign-in…</span>
         <Link href="/admin/login" className="text-sm text-paper underline underline-offset-4">
           Go to sign in
@@ -89,7 +89,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
       {/* Mobile top bar */}
       <div className="lg:hidden bg-slate-950 border-b border-slate-800 p-4 flex items-center justify-between sticky top-0 z-50">
         <div className="flex items-center gap-3">
-          <ElementTile symbol="Rc" number="π" size="sm" tone="dark" />
+          <BrandMark size="sm" />
           <span className="font-display text-lg text-white">Admin</span>
         </div>
         <div className="flex items-center gap-2">
@@ -115,7 +115,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
       >
         <div className="p-5 space-y-7">
           <div className="flex items-center gap-3">
-            <ElementTile symbol="Rc" number="π" size="sm" tone="dark" />
+            <BrandMark size="sm" />
             <div>
               <p className="font-display text-lg leading-tight text-white">Ranjeet Choudhary</p>
               <span className="eyebrow !text-[0.6rem] text-slate-400">Admin</span>

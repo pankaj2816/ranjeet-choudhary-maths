@@ -7,7 +7,7 @@ import { ArrowRight, Eye, EyeOff, Loader2, AlertCircle } from 'lucide-react';
 import { useToast } from '@/context/ToastContext';
 import { signInWithToken } from '@/lib/github';
 import { refreshAdminData } from '@/lib/dataService';
-import ElementTile from '@/components/ui/ElementTile';
+import BrandMark from '@/components/ui/BrandMark';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -37,7 +37,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-paper flex items-center justify-center px-5 py-16">
       <div className="w-full max-w-md">
         <div className="flex items-center gap-3">
-          <ElementTile symbol="Rc" number="π" size="sm" tone="dark" />
+          <BrandMark size="sm" />
           <span className="font-display text-xl text-ink">Ranjeet Choudhary</span>
         </div>
 

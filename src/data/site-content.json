@@ -1,8 +1,8 @@
 {
   "settings": {
     "teacherName": "Ranjeet Choudhary",
-    "tagline": "Mathematics Teacher | Class 10, 11 & 12 | 8+ Years of Teaching",
-    "bioShort": "Helping students understand Algebra, Calculus, Trigonometry and Probability from first principles, with clear steps and plenty of practice.",
+    "tagline": "Mathematics Teacher • 8+ Years Experience",
+    "bioShort": "Clear, step-by-step Mathematics for Class 10, 11 and 12: Algebra, Calculus, Trigonometry and Probability, taught from first principles for CBSE Boards and JEE Main.",
     "experienceYears": 8,
     "centersCount": 3,
     "studentsCount": "5,000+",
@@ -18,7 +18,7 @@
         "id": "center-1",
         "name": "Catalyst Career Institute",
         "location": "Central Campus, Sector 14",
-        "address": "Plot 42, Knowledge Park, Sector 14, Metro Pillar 128",
+        "address": "",
         "batches": "Class 12 Maths: Boards + JEE Main",
         "schedule": "Mon, Wed, Fri (4:00 PM – 7:30 PM)",
         "contactNumber": "+91 84321 75507",
@@ -31,7 +31,7 @@
         "id": "center-2",
         "name": "Apex Science Academy",
         "location": "North Wing, Model Town",
-        "address": "B-Block Main Market, Opposite City Park, Model Town",
+        "address": "",
         "batches": "Class 11 Maths Foundation",
         "schedule": "Tue, Thu, Sat (3:30 PM – 7:00 PM)",
         "contactNumber": "+91 84321 75507",
@@ -44,7 +44,7 @@
         "id": "center-3",
         "name": "Prerana Learning Hub",
         "location": "South Extension Centre",
-        "address": "3rd Floor, Scholar Towers, Near Central Library",
+        "address": "",
         "batches": "Class 10 Maths Board Batch",
         "schedule": "Sunday Special Batches (8:30 AM – 2:00 PM)",
         "contactNumber": "+91 84321 75507",
@@ -53,7 +53,10 @@
         "scheduleHi": "रविवार विशेष बैच (सुबह 8:30 – दोपहर 2:00)",
         "nameHi": "प्रेरणा लर्निंग हब"
       }
-    ]
+    ],
+    "teacherNameHi": "रणजीत चौधरी",
+    "taglineHi": "गणित शिक्षक • 8+ वर्ष अनुभव",
+    "bioShortHi": "कक्षा 10, 11 और 12 के लिए साफ़, चरण-दर-चरण गणित: बीजगणित, कलन, त्रिकोणमिति और प्रायिकता। CBSE बोर्ड और JEE मेन के लिए मूल से समझाया गया।"
   },
   "taxonomies": {
     "subjects": [

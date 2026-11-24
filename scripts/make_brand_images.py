@@ -19,6 +19,7 @@ FONT_DIR = os.environ.get('FONT_DIR', '/tmp/fonts')
 BLUE = (15, 118, 110)
 INK = (15, 23, 42)
 MUTED = (71, 85, 105)
+TEAL = (45, 212, 191)
 PAPER_DEEP = (244, 248, 247)
 LINE = (203, 213, 225)
 PHOTO = os.path.join(ROOT, 'public', 'images', 'ranjeet-photo.jpg')
@@ -28,14 +29,27 @@ def font(weight, size):
     return ImageFont.truetype(os.path.join(FONT_DIR, f'IS-{weight}.ttf'), size)
 
 
+def draw_mark(d, x, y, size):
+    """The logo (square-root sign over "Rc") in a size x size square at (x, y)."""
+    k = size / 40.0
+    d.rectangle([x, y, x + size - 1, y + size - 1], fill=INK)
+    pts = [(5.5, 22), (8.6, 20.4), (12.6, 30.5), (17.6, 8.8), (35, 8.8)]
+    d.line([(x + px * k, y + py * k) for px, py in pts], fill=TEAL, width=max(1, round(2.2 * k)), joint='curve')
+    for px, py in (pts[0], pts[-1]):
+        r = 1.1 * k
+        d.ellipse([x + px * k - r, y + py * k - r, x + px * k + r, y + py * k + r], fill=TEAL)
+    d.text((x + 26.4 * k, y + 23.2 * k), 'Rc', font=font('600', round(14 * k)), fill='white', anchor='mm')
+
+
 def icon(size, radius_ratio, path):
     scale = 4
     s = size * scale
     img = Image.new('RGBA', (s, s), (0, 0, 0, 0))
-    d = ImageDraw.Draw(img)
-    d.rounded_rectangle([0, 0, s - 1, s - 1], radius=int(s * radius_ratio), fill=BLUE)
-    f = font('500', int(s * 0.42))
-    d.text((s / 2, s / 2 + s * 0.02), 'Rc', font=f, fill='white', anchor='mm')
+    mark = Image.new('RGBA', (s, s), (0, 0, 0, 0))
+    draw_mark(ImageDraw.Draw(mark), 0, 0, s)
+    mask = Image.new('L', (s, s), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, s - 1, s - 1], radius=int(s * radius_ratio), fill=255)
+    img.paste(mark, (0, 0), mask)
     img = img.resize((size, size), Image.LANCZOS)
     img.save(path)
 
@@ -65,8 +79,7 @@ def share(path):
     img = Image.new('RGB', (W, H), 'white')
     d = ImageDraw.Draw(img)
     # brand row
-    d.rounded_rectangle([70, 64, 135, 129], radius=6, fill=INK)
-    d.text((102.5, 98), 'Rc', font=font('500', 28), fill='white', anchor='mm')
+    draw_mark(d, 70, 64, 66)
     d.text((151, 72), 'Ranjeet Choudhary', font=font('500', 31), fill=INK)
     d.text((151, 108), 'M A T H E M A T I C S', font=font('500', 14), fill=MUTED)
     # eyebrow

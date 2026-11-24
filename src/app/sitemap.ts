@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/notes',
     '/videos',
     '/articles',
+    '/site-map',
     ...(initialDatabase.conceptNotes || []).filter((n) => n.isPublished).map((n) => `/notes/${n.slug}`),
     ...(initialDatabase.articles || []).filter((a) => a.isPublished).map((a) => `/articles/${a.slug}`),
   ];
