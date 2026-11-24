@@ -49,6 +49,18 @@ jobs:
         with:
           path: ./out
 
+      # GitHub sometimes cannot find the just-uploaded artifact for a few
+      # seconds, so try once more after a pause. If the retry also fails, the
+      # run shows as failed and the old site stays online.
       - name: Deploy to GitHub Pages
         id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Wait before retrying the deploy
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 45
+
+      - name: Deploy to GitHub Pages (retry)
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
