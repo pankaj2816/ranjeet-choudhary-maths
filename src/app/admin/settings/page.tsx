@@ -78,7 +78,7 @@ export default function AdminSettingsPage() {
             Website & Profile Settings
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Configure live announcement banner, teacher profile metrics, coaching center addresses, and contact channels.
+            The strip at the top of the site, teacher profile, coaching centres and contact details.
           </p>
         </div>
       </div>
@@ -93,8 +93,8 @@ export default function AdminSettingsPage() {
                 <Megaphone className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-white">Top Website Announcement Banner</h3>
-                <p className="text-xs text-slate-400">Controls the marquee alert shown at the very top of all student pages.</p>
+                <h3 className="text-base font-bold text-white">Strip at the top of the website</h3>
+                <p className="text-xs text-slate-400">Turn on to show your own announcement (for example a test date). When it is off, a different maths fact shows there each day.</p>
               </div>
             </div>
 
@@ -106,7 +106,7 @@ export default function AdminSettingsPage() {
                 className="w-4 h-4 rounded text-cyan-600 focus:ring-cyan-500"
               />
               <span className="text-xs font-bold text-slate-200">
-                {settings.bannerActive ? 'Banner Active' : 'Banner Disabled'}
+                {settings.bannerActive ? 'Showing my announcement' : 'Showing maths fact'}
               </span>
             </label>
           </div>
@@ -118,7 +118,7 @@ export default function AdminSettingsPage() {
               </label>
               <input
                 type="text"
-                placeholder="e.g. 📢 Admissions open for Class 10, 11 & 12 Maths batches. Check the Notice Board!"
+                placeholder="e.g. Class 12 unit test on Monday. See the Notice Board for the syllabus."
                 value={settings.bannerAlert}
                 onChange={(e) => setSettings({ ...settings, bannerAlert: e.target.value })}
                 className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
@@ -126,7 +126,7 @@ export default function AdminSettingsPage() {
             </div>
 
             <HindiFields
-              fields={[{ key: 'bannerAlertHi', label: 'Announcement in Hindi', placeholder: 'जैसे: कक्षा 11 और 12 के नए बैच में प्रवेश शुरू' }]}
+              fields={[{ key: 'bannerAlertHi', label: 'Announcement in Hindi', placeholder: 'जैसे: सोमवार को कक्षा 12 का यूनिट टेस्ट। पाठ्यक्रम नोटिस बोर्ड पर देखें।' }]}
               values={settings as unknown as Record<string, string | undefined>}
               onChange={(k, v) => setSettings({ ...settings, [k]: v })}
             />

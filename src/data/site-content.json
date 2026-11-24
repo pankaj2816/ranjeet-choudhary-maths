@@ -10,8 +10,8 @@
     "phone": "+91 84321 75507",
     "whatsapp": "+91 84321 75507",
     "bannerActive": false,
-    "bannerAlert": "📢 Admissions open for Class 10, 11 & 12 Maths batches. Check the Notice Board!",
-    "bannerAlertHi": "कक्षा 10, 11 और 12 गणित बैच में प्रवेश शुरू। नोटिस बोर्ड देखें!",
+    "bannerAlert": "",
+    "bannerAlertHi": "",
     "bannerLink": "/updates",
     "coachingCenters": [
       {
